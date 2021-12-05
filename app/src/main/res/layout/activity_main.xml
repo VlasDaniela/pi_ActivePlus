@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomePage"
+    android:background="@color/backgroundc">
+    <com.google.android.material.textfield.TextInputLayout
+         android:layout_marginTop="430dp"
+        android:id="@+id/passwordsi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="@color/visiniuDeschis"
+        app:errorEnabled="true"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="@color/visiniuDeschis">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/crem"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:textColor="@color/visiniuInchis"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+
+        android:id="@+id/usernamesi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="@color/visiniuDeschis"
+        app:counterEnabled="true"
+        app:errorEnabled="true"
+        android:layout_centerInParent="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/crem"
+            android:hint="Username"
+            android:inputType="text"
+            android:textColor="@color/visiniuInchis"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="52dp"
+        android:src="@drawable/logo2">
+
+    </ImageView>
+
+    <Button
+        android:id="@+id/SingUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginBottom="40dp"
+        android:backgroundTint="@color/roz"
+        android:text="Sing Up"
+        android:textColor="@color/white"
+        android:textStyle="italic"></Button>
+    <Button
+        android:id="@+id/SingIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="40dp"
+        android:layout_marginLeft="259dp"
+        android:backgroundTint="@color/roz"
+        android:textColor="@color/white"
+        android:text="Sing In"
+        android:textStyle="italic"></Button>
+
+
+</RelativeLayout>
+

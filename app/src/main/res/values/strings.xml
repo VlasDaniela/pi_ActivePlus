@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">GitTry</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tasks_done">Tasks Done</string>
+    <string name="current_score">Current Score:</string>
+    <string name="tasks_failed">Tasks Failed</string>
+    <string name="ongoing_tasks">Ongoing tasks</string>
+</resources>
