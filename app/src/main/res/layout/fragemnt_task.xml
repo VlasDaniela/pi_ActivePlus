@@ -21,43 +21,43 @@
         <CheckBox
             android:id="@+id/todoCheckBox1"
             android:layout_marginTop="50dp"
-            android:layout_marginLeft="30dp"
+            android:layout_marginStart="30dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:buttonTint="@color/roz"
-            android:text="This is an Sample Task inside the application."
+            android:text="@string/this_is_an_sample_task_inside_the_application"
             android:textColor="@color/crem"/>
         <CheckBox
             android:id="@+id/todoCheckBox2"
-            android:layout_marginLeft="30dp"
+            android:layout_marginStart="30dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:buttonTint="@color/roz"
-            android:text="This is an Sample Task inside the application."
+            android:text="@string/this_is_an_sample_task_inside_the_application"
             android:textColor="@color/crem"/>
         <CheckBox
             android:id="@+id/todoCheckBox3"
-            android:layout_marginLeft="30dp"
+            android:layout_marginStart="30dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:buttonTint="@color/roz"
-            android:text="This is an Sample Task inside the application."
+            android:text="@string/this_is_an_sample_task_inside_the_application"
             android:textColor="@color/crem"/>
         <CheckBox
             android:id="@+id/todoCheckBox4"
-            android:layout_marginLeft="30dp"
+            android:layout_marginStart="30dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:buttonTint="@color/roz"
-            android:text="This is an Sample Task inside the application."
+            android:text="@string/this_is_an_sample_task_inside_the_application"
             android:textColor="@color/crem"/>
         <CheckBox
             android:id="@+id/todoCheckBox5"
-            android:layout_marginLeft="30dp"
+            android:layout_marginStart="30dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:buttonTint="@color/roz"
-            android:text="This is an Sample Task inside the application."
+            android:text="@string/this_is_an_sample_task_inside_the_application"
             android:textColor="@color/crem"/>
 
 
@@ -71,7 +71,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="50dp"
         android:layout_marginBottom="20dp"
-        android:text="TASKS"
+        android:text="@string/tasks"
         android:textSize="32sp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
@@ -91,7 +91,8 @@
         android:backgroundTint="@color/roz"
         android:src="@drawable/ic_baseline_add_24"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="@string/add" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

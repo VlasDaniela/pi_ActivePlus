@@ -6,4 +6,23 @@
     <string name="current_score">Current Score:</string>
     <string name="tasks_failed">Tasks Failed</string>
     <string name="ongoing_tasks">Ongoing tasks</string>
+    <string name="password">Password</string>
+    <string name="username">Username</string>
+    <string name="sing_up">Sing Up</string>
+    <string name="sing_in">Sing In</string>
+    <string name="logo">LOGO</string>
+    <string name="register">Register</string>
+    <string name="usernamer">Username</string>
+    <string name="passwordr">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="registerp">Register</string>
+    <string name="back">Back</string>
+    <string name="this_is_an_sample_task_inside_the_application">This is an Sample Task inside the application.</string>
+    <string name="this_is_an_sample_task_inside_the_application1">This is an Sample Task inside the application.</string>
+    <string name="this_is_an_sample_task_inside_the_application2">This is an Sample Task inside the application.</string>
+    <string name="this_is_an_sample_task_inside_the_application3">This is an Sample Task inside the application.</string>
+    <string name="this_is_an_sample_task_inside_the_application4">This is an Sample Task inside the application.</string>
+    <string name="tasks">TASKS</string>
+    <string name="add">ADD</string>
+    <string name="first_fragment">First Fragment</string>
 </resources>

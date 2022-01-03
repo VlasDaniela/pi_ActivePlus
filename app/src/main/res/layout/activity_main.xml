@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/crem"
-            android:hint="Password"
+            android:hint="@string/password"
             android:inputType="textPassword"
             android:textColor="@color/visiniuInchis"/>
 
@@ -40,7 +40,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/crem"
-            android:hint="Username"
+            android:hint="@string/username"
             android:inputType="text"
             android:textColor="@color/visiniuInchis"
             />
@@ -53,9 +53,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginTop="52dp"
-        android:src="@drawable/logo2">
+        android:src="@drawable/logo2"
+        android:contentDescription="@string/logo" />
 
-    </ImageView>
 
     <Button
         android:id="@+id/SingUp"
@@ -64,12 +64,12 @@
         android:layout_alignParentBottom="true"
 
         android:layout_centerVertical="true"
-        android:layout_marginLeft="50dp"
+        android:layout_marginStart="50dp"
         android:layout_marginBottom="40dp"
         android:backgroundTint="@color/roz"
-        android:text="Sing Up"
+        android:text="@string/sing_up"
         android:textColor="@color/white"
-        android:textStyle="italic"></Button>
+        android:textStyle="italic"/>
     <Button
         android:id="@+id/SingIn"
         android:layout_width="wrap_content"
@@ -77,11 +77,11 @@
         android:layout_alignParentBottom="true"
         android:layout_centerVertical="true"
         android:layout_marginBottom="40dp"
-        android:layout_marginLeft="259dp"
+        android:layout_marginStart="259dp"
         android:backgroundTint="@color/roz"
         android:textColor="@color/white"
-        android:text="Sing In"
-        android:textStyle="italic"></Button>
+        android:text="@string/sing_in"
+        android:textStyle="italic"/>
 
 
 </RelativeLayout>

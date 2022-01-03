@@ -119,9 +119,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="Register"
+            android:text="@string/register"
             android:textStyle="bold"
-            android:textSize="45dp"
+            android:textSize="45sp"
             android:fontFamily="monospace"
             android:textColor="@color/griDeschis"/>
     </LinearLayout>
@@ -147,7 +147,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/crem"
-                android:hint="Username"
+                android:hint="@string/username"
                 android:inputType="text" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -165,7 +165,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/crem"
-                android:hint="Password"
+                android:hint="@string/password"
                 android:inputType="textPassword" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -183,7 +183,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/crem"
-                android:hint="Confirm Password"
+                android:hint="@string/confirm_password"
                 android:inputType="textPassword" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -199,22 +199,24 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
-                android:layout_marginRight="5dp"
+                android:layout_marginEnd="5dp"
                 android:layout_weight="1"
                 android:backgroundTint="@color/roz"
-                android:text="Register"
-                android:textColor="@color/crem" />
+                android:text="@string/register"
+                android:textColor="@color/crem"
+                style="?android:attr/buttonBarButtonStyle" />
 
             <Button
                 android:id="@+id/registerButtonBack"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
+                android:layout_marginStart="5dp"
                 android:layout_marginTop="30dp"
                 android:layout_weight="1"
                 android:backgroundTint="@color/roz"
-                android:text="Back"
-                android:textColor="@color/crem" />
+                android:text="@string/back"
+                android:textColor="@color/crem"
+                style="?android:attr/buttonBarButtonStyle" />
 
         </LinearLayout>
     </LinearLayout>
