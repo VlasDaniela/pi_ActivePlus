@@ -1,19 +1,22 @@
 package com.example.ActivePlus;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.material.textfield.TextInputLayout;
 
 public class HomePage extends AppCompatActivity {
-Button singupButton;
-Button singinButton;
-TextInputLayout password;
-TextInputLayout username;
+
+    private String BASE_URL= "http://10.0.2.2:5432";
+
+    Button singupButton;
+    Button singinButton;
+    TextInputLayout password;
+    TextInputLayout username;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

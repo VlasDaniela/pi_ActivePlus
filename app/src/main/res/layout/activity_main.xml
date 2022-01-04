@@ -69,7 +69,7 @@
         android:backgroundTint="@color/roz"
         android:text="@string/sing_up"
         android:textColor="@color/white"
-        android:textStyle="italic"/>
+        android:textStyle="italic" />
     <Button
         android:id="@+id/SingIn"
         android:layout_width="wrap_content"
