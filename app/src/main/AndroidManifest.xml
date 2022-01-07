@@ -10,15 +10,41 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GitTry">
         <activity
-            android:theme="@style/Theme.MaterialComponents.NoActionBar"
-            android:name="com.example.ActivePlus.MainAplicationPage"
-            android:exported="false" />
+            android:name=".Task1"
+            android:exported="false"
+            android:theme="@style/Theme.MaterialComponents.NoActionBar"/>
         <activity
-            android:name="com.example.ActivePlus.Registration"
+            android:name=".Task2"
+            android:exported="false"
+            android:theme="@style/Theme.MaterialComponents.NoActionBar"/>
+        <activity
+            android:name=".Task3"
+            android:exported="false"
+            android:theme="@style/Theme.MaterialComponents.NoActionBar"/>
+        <activity
+            android:name=".Task4"
+            android:exported="false"
+            android:theme="@style/Theme.MaterialComponents.NoActionBar"/>
+        <activity
+            android:name=".Task5"
+            android:exported="false"
+            android:theme="@style/Theme.MaterialComponents.NoActionBar"/>
+
+
+        <activity
+            android:name=".TaskFormActivity"
             android:exported="false"
             android:theme="@style/Theme.MaterialComponents.NoActionBar" />
         <activity
-            android:name="com.example.ActivePlus.HomePage"
+            android:name=".MainAplicationPage"
+            android:exported="false"
+            android:theme="@style/Theme.MaterialComponents.NoActionBar" />
+        <activity
+            android:name=".Registration"
+            android:exported="false"
+            android:theme="@style/Theme.MaterialComponents.NoActionBar" />
+        <activity
+            android:name=".HomePage"
             android:exported="true"
             android:theme="@style/Theme.MaterialComponents.NoActionBar">
             <intent-filter>

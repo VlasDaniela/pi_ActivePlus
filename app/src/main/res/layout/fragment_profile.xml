@@ -6,18 +6,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".FragmentsForMainAplicationPage.Profile">
+
     <de.hdodenhof.circleimageview.CircleImageView
-        android:layout_gravity="center"
         android:id="@+id/profile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="250dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="250dp"
         android:src="@drawable/logo2"
         app:civ_border_color="@color/roz"
         app:civ_border_width="3dp"
-        android:layout_marginBottom="250dp"
         >
 
     </de.hdodenhof.circleimageview.CircleImageView>
+
+    <Button
+        android:id="@+id/pupload"
+        android:layout_marginBottom="130dp"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="5dp"
+        android:layout_weight="1"
+        android:backgroundTint="@color/roz"
+        android:text="Upload Photo"
+        android:textColor="@color/crem"
+        style="?android:attr/buttonBarButtonStyle" />
+
     <androidx.cardview.widget.CardView
         android:layout_marginStart="50dp"
         android:id="@+id/card1"

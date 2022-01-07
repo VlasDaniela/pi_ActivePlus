@@ -5,11 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/backgroundc"
-    tools:context=".Registration"
-    tools:ignore="ExtraText">
+  >
 
     <LinearLayout
-        android:id="@+id/header"
+        android:id="@+id/header2"
         android:layout_width="match_parent"
         android:layout_height="170dp"
         android:orientation="vertical"
@@ -18,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="@string/register"
+            android:text="Add Task"
             android:textStyle="bold"
             android:textSize="45sp"
             android:fontFamily="monospace"
@@ -27,15 +26,15 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/header"
-        android:layout_marginTop="40dp"
+        android:layout_height="545dp"
+        android:layout_below="@+id/header2"
+        android:layout_marginTop="17dp"
         android:gravity="center_horizontal"
         android:orientation="vertical"
-        android:padding="15dp">
+        android:padding="10dp">
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/username"
+            android:id="@+id/TitleTask2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColorHint="@color/visiniuDeschis"
@@ -46,76 +45,112 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/crem"
-                android:hint="@string/username"
+                android:hint="Task Name"
                 android:inputType="text" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/password"
+            android:id="@+id/SubTask21"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColorHint="@color/visiniuDeschis"
-            app:errorEnabled="true"
-            app:passwordToggleEnabled="true"
-            app:passwordToggleTint="@color/visiniuDeschis">
+            app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/crem"
-                android:hint="@string/password"
-                android:inputType="textPassword" />
+                android:hint="Subtask1"
+                android:inputType="text" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/confirm_password"
+            android:id="@+id/SubTask22"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColorHint="@color/visiniuDeschis"
-            app:errorEnabled="true"
-            app:passwordToggleEnabled="true"
-            app:passwordToggleTint="@color/visiniuDeschis">
+            app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/crem"
-                android:hint="@string/confirm_password"
-                android:inputType="textPassword" />
+                android:hint="Subtask2"
+                android:inputType="text" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/SubTask32"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/visiniuDeschis"
+            app:errorEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/crem"
+                android:hint="Subtask3"
+                android:inputType="text" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/SubTask42"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/visiniuDeschis"
+            app:errorEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/crem"
+                android:hint="Subtask4"
+                android:inputType="text" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/SubTask52"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/visiniuDeschis"
+            app:errorEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/crem"
+                android:hint="Subtask5"
+                android:inputType="text" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <LinearLayout
-            android:layout_marginTop="150dp"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
             android:orientation="horizontal"
             android:weightSum="2.0">
 
             <Button
+                android:id="@+id/SaveTask2"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:layout_marginEnd="5dp"
                 android:layout_weight="1"
                 android:backgroundTint="@color/roz"
-                android:text="@string/register"
+                android:text="Save Task2"
                 android:textColor="@color/crem"
-                style="?android:attr/buttonBarButtonStyle" />
 
-            <Button
-                android:id="@+id/registerButtonBack"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="30dp"
-                android:layout_weight="1"
-                android:backgroundTint="@color/roz"
-                android:text="@string/back"
-                android:textColor="@color/crem"
-                style="?android:attr/buttonBarButtonStyle" />
+                />
+
+
 
         </LinearLayout>
     </LinearLayout>

@@ -1,14 +1,34 @@
 package com.example.ActivePlus.FragmentsForMainAplicationPage;
 
+import android.content.ContentResolver;
+import android.content.Context;
+import android.content.ContextWrapper;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
 
 import com.example.ActivePlus.R;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.BitSet;
+import java.util.zip.Inflater;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -56,11 +76,75 @@ public class Profile extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
-
+    int Select_Photo=1;
+    Uri imageuri;
+    CircleImageView Profile;
+    Button choose;
+    int verify=0;
+    View fragmentview;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false);
+         fragmentview=inflater.inflate(R.layout.fragment_profile,container,false);
+        Profile=(CircleImageView) fragmentview.findViewById(R.id.profile);
+        choose=(Button) fragmentview.findViewById(R.id.pupload);
+        choose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent gallery=new Intent();
+                gallery.setType("image/*");
+                gallery.setAction(Intent.ACTION_GET_CONTENT);
+                startActivityForResult(getActivity().getIntent().createChooser(gallery,"Select Picture"),Select_Photo);
+                verify=1;
+            }
+        });
+
+
+
+
+
+        return  fragmentview;
     }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+            imageuri = data.getData();
+            if (requestCode==Select_Photo)
+            try {
+                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getActivity().getContentResolver(), imageuri);
+                bitmap=Bitmap.createScaledBitmap(bitmap,500,450,true);
+                 Profile.setImageBitmap(bitmap);
+                saveToInternalStorage(bitmap);
+
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    private String saveToInternalStorage(Bitmap bitmapImage){
+        ContextWrapper cw=new ContextWrapper(getContext());
+        File directory=cw.getDir("iamgedir",Context.MODE_PRIVATE);
+        File mypath=new File(directory,"profile.jpeg");
+        FileOutputStream fos=null;
+        try {
+            fos = new FileOutputStream(mypath);
+            bitmapImage.compress(Bitmap.CompressFormat.PNG, 100, fos);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                fos.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return directory.getAbsolutePath();
+    }
+
 }
+
+
+

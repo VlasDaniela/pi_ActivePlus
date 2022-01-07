@@ -7,7 +7,10 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ListView;
 
 import com.example.ActivePlus.FragmentsForMainAplicationPage.FragmentAdapter;
 import com.example.ActivePlus.FragmentsForMainAplicationPage.Progress;
