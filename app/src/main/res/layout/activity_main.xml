@@ -6,47 +6,28 @@
     android:layout_height="match_parent"
     tools:context=".HomePage"
     android:background="@color/backgroundc">
-    <com.google.android.material.textfield.TextInputLayout
-         android:layout_marginTop="430dp"
+
+    <EditText
         android:id="@+id/passwordsi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColorHint="@color/visiniuDeschis"
+        android:layout_marginTop="430dp"
+        android:hint="@string/password"
+        android:textColorHint="@color/crem"
         app:errorEnabled="true"
         app:passwordToggleEnabled="true"
-        app:passwordToggleTint="@color/visiniuDeschis">
+        app:passwordToggleTint="@color/visiniuDeschis" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/crem"
-            android:hint="@string/password"
-            android:inputType="textPassword"
-            android:textColor="@color/visiniuInchis"/>
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
+    <EditText
 
         android:id="@+id/usernamesi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColorHint="@color/visiniuDeschis"
+        android:layout_centerInParent="true"
+        android:hint="@string/username"
+        android:textColorHint="@color/crem"
         app:counterEnabled="true"
-        app:errorEnabled="true"
-        android:layout_centerInParent="true">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/crem"
-            android:hint="@string/username"
-            android:inputType="text"
-            android:textColor="@color/visiniuInchis"
-            />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
+        app:errorEnabled="true" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -62,7 +43,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-
         android:layout_centerVertical="true"
         android:layout_marginStart="50dp"
         android:layout_marginBottom="40dp"

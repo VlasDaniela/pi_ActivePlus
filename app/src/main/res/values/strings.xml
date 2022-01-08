@@ -35,4 +35,6 @@
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="title_activity_task_form">TaskFormAc</string>
+    <string name="email">Email</string>
+    <string name="go_to_home">Go to Home</string>
 </resources>
