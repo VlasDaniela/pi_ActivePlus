@@ -23,7 +23,7 @@ public class HomePage extends AppCompatActivity {
 
     private Retrofit retrofit;
     private RetrofitInterface retrofitInterface;
-    private String BASE_URL= "http://10.0.2.2:5001";
+    private String BASE_URL = "http://10.0.2.2:5001";
 
     Button singupButton;
 
@@ -42,100 +42,103 @@ public class HomePage extends AppCompatActivity {
 
         findViewById(R.id.SingUp).setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) { handleSignupDialog(); }
+            public void onClick(View view) {
+                handleSignupDialog();
+            }
         });
-
         findViewById(R.id.SingIn).setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) { handleLoginDialog(); }
+            public void onClick(View v) {
+                hadleLoginDialog();
+            }
         });
-    }
 
-        private void handleLoginDialog() {
-            View view = getLayoutInflater().inflate(R.layout.activity_main, null);
+        /*findViewById(R.id.SingIn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Button loginBtn = view.findViewById(R.id.SingIn);
+                EditText username = view.findViewById(R.id.usernamesi);
+                EditText password = view.findViewById(R.id.passwordsi);
 
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                loginBtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        HashMap<String, String> map = new HashMap<>();
 
-            builder.setView(view).show();
+                        map.put("username", username.getText().toString());
+                        map.put("password", password.getText().toString());
 
-            Button loginBtn = view.findViewById(R.id.SingIn);
-            final EditText username = view.findViewById(R.id.usernamesi);
-            final EditText password = view.findViewById(R.id.passwordsi);
+                        Call<LoginResult> call = retrofitInterface.executeLogin(map);
 
-            findViewById(R.id.SingIn).setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    HashMap<String, String> map = new HashMap<>();
+                        call.enqueue(new Callback<LoginResult>() {
+                            @Override
+                            public void onResponse(Call<LoginResult> call, Response<LoginResult> response) {
 
-                    map.put("username", username.getText().toString());
-                    map.put("password", password.getText().toString());
+                                if (response.code() == 200) {
 
-                    Call<LoginResult> call = retrofitInterface.executeLogin(map);
+                                    LoginResult result = response.body();
+                                    Toast.makeText(HomePage.this, "SIGNED IN",
+                                            Toast.LENGTH_LONG).show();
+                                    startActivity(new Intent(HomePage.this, MainAplicationPage.class));
 
-                    call.enqueue(new Callback<LoginResult>() {
-                        @Override
-                        public void onResponse(Call<LoginResult> call, Response<LoginResult> response) {
+                                } else if (response.code() == 404) {
+                                    Toast.makeText(HomePage.this, "Wrong Credentials",
+                                            Toast.LENGTH_LONG).show();
+                                }
+                            }
 
-                            if (response.code() == 200) {
-
-                                //LoginResult result = response.body();
-                                Toast.makeText(HomePage.this, "SIGNED IN",
-                                        Toast.LENGTH_LONG).show();
-                                startActivity(new Intent(HomePage.this, MainAplicationPage.class));
-
-                            } else if (response.code() == 404) {
-                                Toast.makeText(HomePage.this, "Wrong Credentials",
+                            @Override
+                            public void onFailure(Call<LoginResult> call, Throwable t) {
+                                Toast.makeText(HomePage.this, t.getMessage(),
                                         Toast.LENGTH_LONG).show();
                             }
-                        }
+                        });
+                    }
+                });
+            }
+        });*/
+    }
 
-                        @Override
-                        public void onFailure(@NonNull Call<LoginResult> call, @NonNull Throwable t) {
-                            Toast.makeText(HomePage.this, t.getMessage(),
-                                    Toast.LENGTH_LONG).show();
-                        }
-                    });
-                }
-            });
-        }
-    private void handleSignupDialog() {
-        View view = getLayoutInflater().inflate(R.layout.activity_registration, null);
+    private void hadleLoginDialog() {
+        View view = getLayoutInflater().inflate(R.layout.activity_main, null);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
         builder.setView(view).show();
 
-        Button signupBtn = view.findViewById(R.id.registernow);
-        final EditText username = view.findViewById(R.id.username);
-        final EditText email = view.findViewById(R.id.email);
-        final EditText password = view.findViewById(R.id.password);
+        Button loginBtn = view.findViewById(R.id.SingIn);
+        EditText username = view.findViewById(R.id.usernamesi);
+        EditText password = view.findViewById(R.id.passwordsi);
 
-        signupBtn.setOnClickListener(new View.OnClickListener() {
+        loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 HashMap<String, String> map = new HashMap<>();
 
-                map.put("name", username.getText().toString());
-                map.put("email", email.getText().toString());
+                map.put("username", username.getText().toString());
                 map.put("password", password.getText().toString());
 
-                Call<Void> call = retrofitInterface.executeSignup(map);
+                Call<LoginResult> call = retrofitInterface.executeLogin(map);
 
-                call.enqueue(new Callback<Void>() {
+                call.enqueue(new Callback<LoginResult>() {
                     @Override
-                    public void onResponse(Call<Void> call, Response<Void> response) {
+                    public void onResponse(Call<LoginResult> call, Response<LoginResult> response) {
 
                         if (response.code() == 200) {
-                            Toast.makeText(HomePage.this,
-                                    "Signed up successfully", Toast.LENGTH_LONG).show();
-                        } else if (response.code() == 400) {
-                            Toast.makeText(HomePage.this,
-                                    "Already registered", Toast.LENGTH_LONG).show();
-                        }
 
+                            LoginResult result = response.body();
+                            Toast.makeText(HomePage.this, "SIGNED IN",
+                                    Toast.LENGTH_LONG).show();
+                            startActivity(new Intent(HomePage.this, MainAplicationPage.class));
+
+                        } else if (response.code() == 404) {
+                            Toast.makeText(HomePage.this, "Wrong Credentials",
+                                    Toast.LENGTH_LONG).show();
+                        }
                     }
 
                     @Override
-                    public void onFailure(@NonNull Call<Void> call, @NonNull Throwable t) {
+                    public void onFailure(Call<LoginResult> call, Throwable t) {
                         Toast.makeText(HomePage.this, t.getMessage(),
                                 Toast.LENGTH_LONG).show();
                     }
@@ -144,5 +147,96 @@ public class HomePage extends AppCompatActivity {
         });
     }
 
-        }
+    /*private void handleLoginDialog() {
+                 View view = getLayoutInflater().inflate(R.layout.activity_main, null);
 
+                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+                 builder.setView(view).show();
+
+                 Button loginBtn = view.findViewById(R.id.SingIn);
+                 EditText username = view.findViewById(R.id.usernamesi);
+                 EditText password = view.findViewById(R.id.passwordsi);
+
+                 loginBtn.setOnClickListener(new View.OnClickListener() {
+                     @Override
+                     public void onClick(View v) {
+                         HashMap<String, String> map = new HashMap<>();
+
+                         map.put("username", username.getText().toString());
+                         map.put("password", password.getText().toString());
+
+                         Call<LoginResult> call = retrofitInterface.executeLogin(map);
+
+                         call.enqueue(new Callback<LoginResult>() {
+                             @Override
+                             public void onResponse(Call<LoginResult> call, Response<LoginResult> response) {
+
+                                 if (response.code() == 200) {
+
+                                     LoginResult result = response.body();
+                                     Toast.makeText(HomePage.this, "SIGNED IN",
+                                             Toast.LENGTH_LONG).show();
+                                     startActivity(new Intent(HomePage.this, MainAplicationPage.class));
+
+                                 } else if (response.code() == 404) {
+                                     Toast.makeText(HomePage.this, "Wrong Credentials",
+                                             Toast.LENGTH_LONG).show();
+                                 }
+                             }
+
+                             @Override
+                             public void onFailure(Call<LoginResult> call, Throwable t) {
+                                 Toast.makeText(HomePage.this, t.getMessage(),
+                                         Toast.LENGTH_LONG).show();
+                             }
+                         });
+                     }
+                 });
+             }*/
+        private void handleSignupDialog () {
+            View view = getLayoutInflater().inflate(R.layout.activity_registration, null);
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setView(view).show();
+
+            Button signupBtn = view.findViewById(R.id.registernow);
+            final EditText username = view.findViewById(R.id.username);
+            final EditText email = view.findViewById(R.id.email);
+            final EditText password = view.findViewById(R.id.password);
+
+            signupBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    HashMap<String, String> map = new HashMap<>();
+
+                    map.put("username", username.getText().toString());
+                    map.put("email", email.getText().toString());
+                    map.put("password", password.getText().toString());
+
+                    Call<Void> call = retrofitInterface.executeSignup(map);
+
+                    call.enqueue(new Callback<Void>() {
+                        @Override
+                        public void onResponse(Call<Void> call, Response<Void> response) {
+
+                            if (response.code() == 200) {
+                                Toast.makeText(HomePage.this,
+                                        "Signed up successfully", Toast.LENGTH_LONG).show();
+                            } else if (response.code() == 400) {
+                                Toast.makeText(HomePage.this,
+                                        "Already registered", Toast.LENGTH_LONG).show();
+                            }
+
+                        }
+
+                        @Override
+                        public void onFailure(@NonNull Call<Void> call, @NonNull Throwable t) {
+                            Toast.makeText(HomePage.this, t.getMessage(),
+                                    Toast.LENGTH_LONG).show();
+                        }
+                    });
+                }
+            });
+        }
+    }
