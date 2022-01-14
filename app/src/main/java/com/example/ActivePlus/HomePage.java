@@ -100,7 +100,7 @@ public class HomePage extends AppCompatActivity {
     }
 
     private void hadleLoginDialog() {
-        View view = getLayoutInflater().inflate(R.layout.activity_main, null);
+        View view = getLayoutInflater().inflate(R.layout.login, null);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
