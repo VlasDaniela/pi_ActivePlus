@@ -195,7 +195,7 @@ public class HomePage extends AppCompatActivity {
                  });
              }*/
         private void handleSignupDialog () {
-            View view = getLayoutInflater().inflate(R.layout.activity_registration, null);
+            View view = getLayoutInflater().inflate(R.layout.register_pop, null);
 
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setView(view).show();
