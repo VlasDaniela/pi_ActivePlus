@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomePage"
+    android:background="@color/backgroundc"
+    android:orientation="vertical">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:contentDescription="@string/logo"
+        android:src="@drawable/logo2" />
+
+    <EditText
+        android:layout_marginTop="20dp"
+        android:id="@+id/usernamesi"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/crem"
+        android:hint="@string/username"
+        android:textColorHint="@color/visiniuInchis"
+        />
+
+    <EditText
+
+        android:id="@+id/passwordsi"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/crem"
+        android:layout_marginTop="50dp"
+        android:hint="@string/password"
+        android:textColorHint="@color/visiniuInchis"
+        android:inputType="textWebPassword"
+         />
+
+
+    <Button
+        android:layout_marginTop="150dp"
+        android:id="@+id/SingIn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="40dp"
+        android:backgroundTint="@color/roz"
+        android:text="@string/sing_in"
+        android:textColor="@color/white"
+        android:textStyle="italic" />
+
+
+</LinearLayout>
