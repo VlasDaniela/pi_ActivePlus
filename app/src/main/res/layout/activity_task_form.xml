@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/backgroundc"
-    tools:context=".Registration"
     tools:ignore="ExtraText">
 
     <LinearLayout
@@ -35,7 +34,6 @@
         android:padding="10dp">
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/TitleTask"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColorHint="@color/visiniuDeschis"
@@ -43,6 +41,7 @@
             app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/TitleTask"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/crem"
@@ -52,13 +51,13 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/Task1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColorHint="@color/visiniuDeschis"
             app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/Task1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/crem"
@@ -68,13 +67,13 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/Task2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColorHint="@color/visiniuDeschis"
             app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/Task2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/crem"
@@ -84,13 +83,13 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/Task3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColorHint="@color/visiniuDeschis"
             app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/Task3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/crem"
@@ -100,13 +99,13 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/Task4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColorHint="@color/visiniuDeschis"
             app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/Task4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/crem"
@@ -116,13 +115,13 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/Task5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColorHint="@color/visiniuDeschis"
             app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/Task5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/crem"

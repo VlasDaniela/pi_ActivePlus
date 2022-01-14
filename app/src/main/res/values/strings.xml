@@ -37,4 +37,5 @@
     <string name="title_activity_task_form">TaskFormAc</string>
     <string name="email">Email</string>
     <string name="go_to_home">Go to Home</string>
+    <string name="task_added_here">TASK ADDED HERE</string>
 </resources>

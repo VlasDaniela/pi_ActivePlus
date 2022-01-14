@@ -21,6 +21,8 @@
         android:layout_height="40dp"
         android:background="@color/crem"
         android:hint="@string/username"
+        android:inputType="text"
+        android:textColor="@color/visiniuInchis"
         android:textColorHint="@color/visiniuInchis"
         />
 
@@ -32,6 +34,7 @@
         android:background="@color/crem"
         android:layout_marginTop="50dp"
         android:hint="@string/password"
+        android:textColor="@color/visiniuInchis"
         android:textColorHint="@color/visiniuInchis"
         android:inputType="textWebPassword"
          />

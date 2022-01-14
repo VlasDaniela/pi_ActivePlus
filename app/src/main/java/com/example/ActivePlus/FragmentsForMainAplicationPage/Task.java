@@ -1,29 +1,31 @@
 package com.example.ActivePlus.FragmentsForMainAplicationPage;
 
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.cardview.widget.CardView;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
-
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
-import com.example.ActivePlus.MainAplicationPage;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.cardview.widget.CardView;
+import androidx.fragment.app.Fragment;
+
 import com.example.ActivePlus.R;
-import com.example.ActivePlus.Task1;
-import com.example.ActivePlus.Task2;
-import com.example.ActivePlus.Task3;
-import com.example.ActivePlus.Task4;
-import com.example.ActivePlus.Task5;
-import com.example.ActivePlus.TaskFormActivity;
+import com.example.ActivePlus.RetrofitInterface;
+import com.google.android.material.textfield.TextInputEditText;
+
+import java.util.HashMap;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -32,6 +34,7 @@ import com.example.ActivePlus.TaskFormActivity;
  */
 public class Task extends Fragment {
 
+    final int x[]= {0};
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -55,6 +58,11 @@ public class Task extends Fragment {
         return fragment;
     }
 
+    private Retrofit retrofit;
+    private RetrofitInterface retrofitInterface;
+    private String BASE_URL = "http://10.0.2.2:5001";
+    CardView TaskCard;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,61 +71,115 @@ public class Task extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
 
+
     }
-
-
-    CardView TaskCard1;
-    CardView TaskCard2;
-    CardView TaskCard3;
-    CardView TaskCard4;
-    CardView TaskCard5;
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View fragmentview=inflater.inflate(R.layout.fragemnt_task, container, false);
-        TaskCard1=(CardView) fragmentview.findViewById(R.id.TaskCard1);
-        TaskCard2=(CardView) fragmentview.findViewById(R.id.TaskCard2);
-        TaskCard3=(CardView) fragmentview.findViewById(R.id.TaskCard3);
-        TaskCard4=(CardView) fragmentview.findViewById(R.id.TaskCard4);
-        TaskCard5=(CardView) fragmentview.findViewById(R.id.TaskCard5);
+        TaskCard = (CardView) fragmentview.findViewById(R.id.TaskCard);
 
-        TaskCard1.setOnClickListener(new View.OnClickListener() {
+        retrofit = new Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        retrofitInterface = retrofit.create(RetrofitInterface.class);
+
+        TaskCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(), Task1.class));
-            }
-        });
-        TaskCard2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getActivity(), Task2.class));
-            }
-        });
-        TaskCard3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getActivity(), Task3.class));
-            }
-        });
-        TaskCard4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getActivity(), Task4.class));
-            }
-        });
-        TaskCard5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getActivity(), Task5.class));
+                handleCreateTaskDialog();
             }
         });
 
-
-        return fragmentview;
+        return  fragmentview;
     }
 
+    private void handleCreateTaskDialog() {
+        View view = getLayoutInflater().inflate(R.layout.activity_task_form, null);
 
-}
+        View fragmentview = getLayoutInflater().inflate(R.layout.fragemnt_task,null);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+
+        builder.setView(view).show();
+
+        Button SaveTask = view.findViewById(R.id.SaveTask);
+        TextInputEditText task = view.findViewById(R.id.TitleTask);
+        TextInputEditText task1 = view.findViewById(R.id.Task1);
+        TextInputEditText task2 = view.findViewById(R.id.Task2);
+        TextInputEditText task3 =view.findViewById(R.id.Task3);
+        TextInputEditText task4 = view.findViewById(R.id.Task4);
+        TextInputEditText task5 = view.findViewById(R.id.Task5);
+
+        TextView taskname1=fragmentview.findViewById(R.id.taskk);
+        TextView taskname2=fragmentview.findViewById(R.id.taskk1);
+        TextView taskname3=fragmentview.findViewById(R.id.taskk2);
+        TextView taskname4=fragmentview.findViewById(R.id.taskk3);
+        TextView taskname5=fragmentview.findViewById(R.id.taskk4);
+
+
+        SaveTask.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                HashMap<String, String> map = new HashMap<>();
+
+                map.put("task", task.getText().toString());
+                map.put("task1", task1.getText().toString());
+                map.put("task2", task2.getText().toString());
+                map.put("task3", task3.getText().toString());
+                map.put("task4", task4.getText().toString());
+                map.put("task5", task5.getText().toString());
+
+                Call<Void> call = retrofitInterface.executeNewTask(map);
+
+                call.enqueue(new Callback<Void>() {
+                    @Override
+                    public void onResponse(Call<Void> call, Response<Void> response) {
+
+                        if (response.code() == 200) {
+                            Toast.makeText(getActivity(),
+                                    "Task added", Toast.LENGTH_LONG).show();
+                            Log.d("Key of mess","The mess " + task.getText().toString());
+                            //x[0] = x[0] + 1;
+                            switch (x[0]){
+                                case 0:{ taskname1.setText(task.getText().toString());
+                                    Log.d("Key of mess","The mess " + task.getText().toString());
+                                    x[0] = x[0] + 1;}
+                                break;
+                                case 1: {taskname2.setText(task.getText().toString());
+                                    Log.d("Key of mess","The mess2 " + task.getText().toString());
+                                    x[0] = x[0] + 1;}
+                                break;
+                                case 2:{ taskname3.setText(task.getText().toString());
+                                    Log.d("Key of mess","The mess3 " + task.getText().toString());
+                                    x[0] = x[0] + 1;}
+                                break;
+                                case 3: {taskname4.setText(task.getText().toString());
+                                    Log.d("Key of mess","The mess4 " + task.getText().toString());
+                                    x[0] = x[0] + 1;}
+                                break;
+                                case 4: {taskname5.setText(task.getText().toString());
+                                    Log.d("Key of mess","The mess5 " + task.getText().toString());
+                                    x[0] = 0;}
+                                break;
+                            }
+
+                        } else if (response.code() == 400) {
+                            Toast.makeText(getActivity(),
+                                    "Already existing task", Toast.LENGTH_LONG).show();
+                        }
+                    }
+                    @Override
+                    public void onFailure(@NonNull Call<Void> call, @NonNull Throwable t) {
+                        Toast.makeText(getActivity(), t.getMessage(),
+                                Toast.LENGTH_LONG).show();
+                    }
+                });
+            }
+        });
+    }
+    }
+

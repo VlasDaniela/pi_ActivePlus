@@ -14,32 +14,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GitTry"
         android:fullBackupContent="@xml/backup_descriptor">
-        <activity
-            android:name=".Task1"
-            android:exported="false"
-            android:theme="@style/Theme.MaterialComponents.NoActionBar"/>
-        <activity
-            android:name=".Task2"
-            android:exported="false"
-            android:theme="@style/Theme.MaterialComponents.NoActionBar"/>
-        <activity
-            android:name=".Task3"
-            android:exported="false"
-            android:theme="@style/Theme.MaterialComponents.NoActionBar"/>
-        <activity
-            android:name=".Task4"
-            android:exported="false"
-            android:theme="@style/Theme.MaterialComponents.NoActionBar"/>
-        <activity
-            android:name=".Task5"
-            android:exported="false"
-            android:theme="@style/Theme.MaterialComponents.NoActionBar"/>
 
 
-        <activity
-            android:name=".TaskFormActivity"
-            android:exported="false"
-            android:theme="@style/Theme.MaterialComponents.NoActionBar" />
         <activity
             android:name=".MainAplicationPage"
             android:exported="false"

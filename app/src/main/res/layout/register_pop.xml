@@ -4,7 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal">
     <LinearLayout
         android:id="@+id/header"
@@ -40,9 +39,9 @@
             android:background="@color/crem"
             android:hint="@string/username"
             android:inputType="text"
-            android:textColorHint="@color/visiniuDeschis"
-            app:counterEnabled="true"
-            app:errorEnabled="true" />
+            android:textColor="@color/visiniuInchis"
+            android:textColorHint="@color/visiniuInchis"
+            />
 
         <EditText
             android:layout_marginTop="50dp"
@@ -52,9 +51,9 @@
             android:background="@color/crem"
             android:hint="@string/email"
             android:inputType="text"
-            android:textColorHint="@color/visiniuDeschis"
-            app:counterEnabled="true"
-            app:errorEnabled="true" />
+            android:textColor="@color/visiniuInchis"
+            android:textColorHint="@color/visiniuInchis"
+             />
 
         <EditText
             android:layout_marginTop="50dp"
@@ -64,10 +63,9 @@
             android:background="@color/crem"
             android:hint="@string/password"
             android:inputType="textPassword"
-            android:textColorHint="@color/visiniuDeschis"
-            app:errorEnabled="true"
-            app:passwordToggleEnabled="true"
-            app:passwordToggleTint="@color/visiniuDeschis" />
+            android:textColor="@color/visiniuInchis"
+            android:textColorHint="@color/visiniuInchis"
+            />
 
         <Button
             android:id="@+id/registernow"
