@@ -26,15 +26,16 @@
             android:layout_gravity="center"
             android:layout_marginBottom="10dp"
             android:textSize="22sp"
-            android:text="Create Your Task"
+            android:text="@string/create_your_task"
             android:textColor="@color/crem">
         </TextView>
 
     </androidx.cardview.widget.CardView>
+
     <RelativeLayout
-        android:layout_marginTop="120dp"
         android:layout_width="match_parent"
-        android:layout_height="700dp">
+        android:layout_height="700dp"
+        android:layout_marginTop="120dp">
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -49,12 +50,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="TASK ADDED HERE"
-                android:textSize="20sp"
-                android:textColorHint="@color/visiniuDeschis">
+                android:text="@string/task_added_here1"
+                android:textColorHint="@color/visiniuDeschis"
+                android:textSize="20sp">
 
             </TextView>
+
         </androidx.cardview.widget.CardView>
+
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="50dp"
@@ -67,12 +70,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="TASK ADDED HERE"
-                android:textSize="20sp"
-                android:textColorHint="@color/visiniuDeschis">
+                android:text="@string/task_added_here2"
+                android:textColorHint="@color/visiniuDeschis"
+                android:textSize="20sp">
 
             </TextView>
+
         </androidx.cardview.widget.CardView>
+
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="50dp"
@@ -85,12 +90,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="TASK ADDED HERE"
-                android:textSize="20sp"
-                android:textColorHint="@color/visiniuDeschis">
+                android:text="@string/task_added_here3"
+                android:textColorHint="@color/visiniuDeschis"
+                android:textSize="20sp">
 
             </TextView>
+
         </androidx.cardview.widget.CardView>
+
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="50dp"
@@ -103,12 +110,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="TASK ADDED HERE"
-                android:textSize="20sp"
-                android:textColorHint="@color/visiniuDeschis">
+                android:text="@string/task_added_here4"
+                android:textColorHint="@color/visiniuDeschis"
+                android:textSize="20sp">
 
             </TextView>
+
         </androidx.cardview.widget.CardView>
+
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="50dp"
@@ -121,13 +130,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="@string/task_added_here"
-                android:textSize="20sp"
-                android:textColorHint="@color/visiniuDeschis">
+                android:text="@string/task_added_here5"
+                android:textColorHint="@color/visiniuDeschis"
+                android:textSize="20sp">
 
             </TextView>
+
         </androidx.cardview.widget.CardView>
 
-
     </RelativeLayout>
+
 </RelativeLayout>

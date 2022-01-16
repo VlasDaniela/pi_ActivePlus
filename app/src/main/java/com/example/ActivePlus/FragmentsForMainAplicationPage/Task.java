@@ -1,13 +1,11 @@
 package com.example.ActivePlus.FragmentsForMainAplicationPage;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -27,52 +25,17 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link Task#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class Task extends Fragment {
+
+public class Task extends Fragment  {
 
     final int x[]= {0};
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
     ListView listView;
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public Task() {
-        // Required empty public constructor
-    }
-
-    // TODO: Rename and change types and number of parameters
-    public static Task newInstance(String param1, String param2) {
-        Task fragment = new Task();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
 
     private Retrofit retrofit;
     private RetrofitInterface retrofitInterface;
     private String BASE_URL = "http://10.0.2.2:5001";
     CardView TaskCard;
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-
-
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -114,11 +77,11 @@ public class Task extends Fragment {
         TextInputEditText task4 = view.findViewById(R.id.Task4);
         TextInputEditText task5 = view.findViewById(R.id.Task5);
 
-        TextView taskname1=fragmentview.findViewById(R.id.taskk);
-        TextView taskname2=fragmentview.findViewById(R.id.taskk1);
-        TextView taskname3=fragmentview.findViewById(R.id.taskk2);
-        TextView taskname4=fragmentview.findViewById(R.id.taskk3);
-        TextView taskname5=fragmentview.findViewById(R.id.taskk4);
+//        TextView taskname1=fragmentview.findViewById(R.id.taskk);
+//        TextView taskname2=fragmentview.findViewById(R.id.taskk1);
+//        TextView taskname3=fragmentview.findViewById(R.id.taskk2);
+//        TextView taskname4=fragmentview.findViewById(R.id.taskk3);
+//        TextView taskname5=fragmentview.findViewById(R.id.taskk4);
 
 
         SaveTask.setOnClickListener(new View.OnClickListener() {
@@ -142,30 +105,32 @@ public class Task extends Fragment {
                         if (response.code() == 200) {
                             Toast.makeText(getActivity(),
                                     "Task added", Toast.LENGTH_LONG).show();
-                            Log.d("Key of mess","The mess " + task.getText().toString());
-                            //x[0] = x[0] + 1;
-                            switch (x[0]){
-                                case 0:{ taskname1.setText(task.getText().toString());
-                                    Log.d("Key of mess","The mess " + task.getText().toString());
-                                    x[0] = x[0] + 1;}
-                                break;
-                                case 1: {taskname2.setText(task.getText().toString());
-                                    Log.d("Key of mess","The mess2 " + task.getText().toString());
-                                    x[0] = x[0] + 1;}
-                                break;
-                                case 2:{ taskname3.setText(task.getText().toString());
-                                    Log.d("Key of mess","The mess3 " + task.getText().toString());
-                                    x[0] = x[0] + 1;}
-                                break;
-                                case 3: {taskname4.setText(task.getText().toString());
-                                    Log.d("Key of mess","The mess4 " + task.getText().toString());
-                                    x[0] = x[0] + 1;}
-                                break;
-                                case 4: {taskname5.setText(task.getText().toString());
-                                    Log.d("Key of mess","The mess5 " + task.getText().toString());
-                                    x[0] = 0;}
-                                break;
-                            }
+//                            Log.d("Key of mess","The mess " + task.getText().toString());
+//                            //x[0] = x[0] + 1;
+//                            switch (x[0]){
+//                                case 0:{ taskname1.setText(task.getText().toString());
+//                                    Log.d("Key of mess","The mess " + task.getText().toString());
+//                                    x[0] = x[0] + 1;}
+//                                break;
+//                                case 1: {taskname2.setText(task.getText().toString());
+//                                    Log.d("Key of mess","The mess2 " + task.getText().toString());
+//                                    x[0] = x[0] + 1;}
+//                                break;
+//                                case 2:{ taskname3.setText(task.getText().toString());
+//                                    Log.d("Key of mess","The mess3 " + task.getText().toString());
+//                                    x[0] = x[0] + 1;}
+//                                break;
+//                                case 3: {taskname4.setText(task.getText().toString());
+//                                    Log.d("Key of mess","The mess4 " + task.getText().toString());
+//                                    x[0] = x[0] + 1;}
+//                                break;
+//                                case 4: {taskname5.setText(task.getText().toString());
+//                                    Log.d("Key of mess","The mess5 " + task.getText().toString());
+//                                    x[0] = 0;}
+//                                break;
+//                                default:
+//                                    throw new IllegalStateException("Unexpected value: " + x[0]);
+//                            }
 
                         } else if (response.code() == 400) {
                             Toast.makeText(getActivity(),
