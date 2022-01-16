@@ -46,7 +46,8 @@
                 android:layout_height="wrap_content"
                 android:background="@color/crem"
                 android:hint="Task Name"
-                android:inputType="text" />
+                android:inputType="text"
+                android:textColor="@color/visiniuInchis"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -62,7 +63,8 @@
                 android:layout_height="wrap_content"
                 android:background="@color/crem"
                 android:hint="Subtask1"
-                android:inputType="text" />
+                android:inputType="text"
+                android:textColor="@color/visiniuInchis"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -78,7 +80,8 @@
                 android:layout_height="wrap_content"
                 android:background="@color/crem"
                 android:hint="Subtask2"
-                android:inputType="text" />
+                android:inputType="text"
+                android:textColor="@color/visiniuInchis"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -94,7 +97,8 @@
                 android:layout_height="wrap_content"
                 android:background="@color/crem"
                 android:hint="Subtask3"
-                android:inputType="text" />
+                android:inputType="text"
+                android:textColor="@color/visiniuInchis"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -110,7 +114,8 @@
                 android:layout_height="wrap_content"
                 android:background="@color/crem"
                 android:hint="Subtask4"
-                android:inputType="text" />
+                android:inputType="text"
+                android:textColor="@color/visiniuInchis"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -126,7 +131,8 @@
                 android:layout_height="wrap_content"
                 android:background="@color/crem"
                 android:hint="Subtask5"
-                android:inputType="text" />
+                android:inputType="text"
+                android:textColor="@color/visiniuInchis"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 

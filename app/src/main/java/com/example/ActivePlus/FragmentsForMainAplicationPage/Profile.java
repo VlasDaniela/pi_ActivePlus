@@ -15,6 +15,7 @@ import android.widget.Button;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.ActivePlus.HomePage;
 import com.example.ActivePlus.R;
 
 import java.io.File;
@@ -90,6 +91,14 @@ public class Profile extends Fragment {
                 gallery.setAction(Intent.ACTION_GET_CONTENT);
                 startActivityForResult(getActivity().getIntent().createChooser(gallery,"Select Picture"),Select_Photo);
                 verify=1;
+            }
+        });
+        Button btn = fragmentview.findViewById(R.id.logOut);
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), HomePage.class));
             }
         });
 
