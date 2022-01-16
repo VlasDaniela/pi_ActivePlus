@@ -1,31 +1,37 @@
-package com.example.ActivePlus.FragmentsForMainAplicationPage;
 
-import android.os.Bundle;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
-import androidx.cardview.widget.CardView;
-import androidx.fragment.app.Fragment;
+        package com.example.ActivePlus.FragmentsForMainAplicationPage;
 
-import com.example.ActivePlus.R;
-import com.example.ActivePlus.RetrofitInterface;
-import com.google.android.material.textfield.TextInputEditText;
+        import android.content.Context;
+        import android.os.Bundle;
+        import android.os.Handler;
+        import android.os.Looper;
+        import android.util.Log;
+        import android.view.LayoutInflater;
+        import android.view.View;
+        import android.view.ViewGroup;
+        import android.widget.Button;
+        import android.widget.EditText;
+        import android.widget.ListView;
+        import android.widget.TextView;
+        import android.widget.Toast;
 
-import java.util.HashMap;
+        import androidx.annotation.NonNull;
+        import androidx.appcompat.app.AlertDialog;
+        import androidx.cardview.widget.CardView;
+        import androidx.fragment.app.Fragment;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
+        import com.example.ActivePlus.R;
+        import com.example.ActivePlus.RetrofitInterface;
+        import com.google.android.material.textfield.TextInputEditText;
+
+        import java.util.HashMap;
+
+        import retrofit2.Call;
+        import retrofit2.Callback;
+        import retrofit2.Response;
+        import retrofit2.Retrofit;
+        import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -80,7 +86,6 @@ public class Task extends Fragment {
         // Inflate the layout for this fragment
         View fragmentview=inflater.inflate(R.layout.fragemnt_task, container, false);
         TaskCard = (CardView) fragmentview.findViewById(R.id.TaskCard);
-
         retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
@@ -142,11 +147,13 @@ public class Task extends Fragment {
                         if (response.code() == 200) {
                             Toast.makeText(getActivity(),
                                     "Task added", Toast.LENGTH_LONG).show();
-                            Log.d("Key of mess","The mess " + task.getText().toString());
+
                             //x[0] = x[0] + 1;
                             switch (x[0]){
-                                case 0:{ taskname1.setText(task.getText().toString());
-                                    Log.d("Key of mess","The mess " + task.getText().toString());
+                                case 0:{
+
+                                    taskname1.setText(task.getText().toString());
+                                  Log.d("Sa ma pis pe el ","Ma pis "+taskname1.getText().toString());
                                     x[0] = x[0] + 1;}
                                 break;
                                 case 1: {taskname2.setText(task.getText().toString());
@@ -181,5 +188,5 @@ public class Task extends Fragment {
             }
         });
     }
-    }
+}
 

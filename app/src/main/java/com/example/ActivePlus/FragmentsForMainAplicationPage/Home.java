@@ -1,5 +1,7 @@
 package com.example.ActivePlus.FragmentsForMainAplicationPage;
 
+import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,8 +9,18 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.DecelerateInterpolator;
+import android.view.animation.RotateAnimation;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.ActivePlus.R;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -58,10 +70,73 @@ public class Home extends Fragment {
 
     }
 
+    private Button challenge;
+    private ImageView wheel;
+    private static final  String [] sectors={"10","10","10","10","15","15","15","20","20"};
+    private  static final int [] sectorDegrees= new int[ sectors.length];
+    private static final Random random=new Random();
+    private int  degree=0;
+    private boolean isSpinning=false;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        View fragmentview=inflater.inflate(R.layout.fragment_home, container, false);
+
+        challenge=fragmentview.findViewById(R.id.ChallengeButton);
+        wheel=fragmentview.findViewById(R.id.wheel);
+        getDegreeForSectors();
+        challenge.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                    spin();
+                    isSpinning=true;
+
+
+
+            }
+        });
+
+
+
+        return fragmentview;
     }
+    private void spin(){
+        degree=random.nextInt(sectors.length-1);
+
+        RotateAnimation rotateAnimation=new RotateAnimation(0,(360* sectors.length)+sectorDegrees[degree],RotateAnimation.RELATIVE_TO_SELF,0.5f,RotateAnimation.RELATIVE_TO_SELF,0.5f);
+        rotateAnimation.setDuration(3600);
+        rotateAnimation.setFillAfter(true);
+        rotateAnimation.setInterpolator(new DecelerateInterpolator());
+        rotateAnimation.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+
+
+                isSpinning=false;
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+
+        wheel.startAnimation(rotateAnimation);
+
+    }
+    private  void getDegreeForSectors(){
+        int sectordegree=360/ sectors.length;
+        for(int i=0;i< sectors.length;i++){
+            sectorDegrees[i]=(i+1)*sectordegree;
+
+        }
+    }
+
 }

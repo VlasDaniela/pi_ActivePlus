@@ -47,14 +47,56 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="167dp"
-        android:layout_marginTop="135dp"
-        android:layout_marginEnd="186dp"
-        android:layout_marginBottom="348dp"
-        android:text="TextView" />
+        android:layout_marginTop="300dp"
+        android:text="Joc pentru utilizator guide:"
+        android:textStyle="italic"
+        android:textColor="@color/crem"/>
+    <TextView
+         android:layout_marginLeft="180dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
+        android:text="1 Logati-va pe aplicatie sau creati un cont."
+        android:textColor="@color/crem"/>
+    <TextView
+        android:layout_marginLeft="180dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="350dp"
+        android:text="2 O sa fiti redirectionati la pagina de home unde exista jocul de tipul LuckyWheel."
+        android:textColor="@color/crem"/>
+    <TextView
+        android:layout_marginLeft="180dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="420dp"
+        android:text="3 Apasati pe butonul de GetYour challenge si vedeti ce a-ti primit."
+        android:textColor="@color/crem"/>
+    <TextView
+        android:layout_marginLeft="180dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="470dp"
+        android:text="4 10 reprezinta 2 task-uri , 15 3task-uri , 20 4 task-uri. "
+        android:textColor="@color/crem"/>
+    <TextView
+        android:layout_marginLeft="180dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="520dp"
+        android:text="5 Numarul primit reprezinta challeng-ul pe care ti-l pune aplicatia."
+        android:textColor="@color/crem"/>
+    <TextView
+        android:layout_marginLeft="180dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="570dp"
+        android:text="6 Continua bucuros sa utilizezi aplicatia!! "
+        android:textColor="@color/crem"/>
+
+
+
+
 
 
 </RelativeLayout>
