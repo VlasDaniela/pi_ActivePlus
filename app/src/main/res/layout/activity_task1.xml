@@ -9,13 +9,13 @@
 
     <com.google.android.material.progressindicator.LinearProgressIndicator
         android:id="@+id/ProgressIdicator"
-        android:layout_width="190dp"
+        android:layout_width="125dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="210dp"
         android:layout_marginTop="680dp"
-        app:trackColor="@color/rozDeschis"
-        app:indicatorDirectionLinear="leftToRight"
         app:indicatorColor="@color/crem"
+        app:indicatorDirectionLinear="leftToRight"
+        app:trackColor="@color/rozDeschis"
 
         >
 
@@ -24,7 +24,7 @@
         android:id="@+id/CheckBox11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="350dp"
+        android:layout_marginLeft="315dp"
         android:layout_marginTop="275dp">
 
     </CheckBox>
@@ -32,7 +32,7 @@
         android:id="@+id/CheckBox12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="350dp"
+        android:layout_marginLeft="315dp"
         android:layout_marginTop="355dp">
 
     </CheckBox>
@@ -40,7 +40,7 @@
         android:id="@+id/CheckBox13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="350dp"
+        android:layout_marginLeft="315dp"
         android:layout_marginTop="430dp">
 
     </CheckBox>
@@ -48,7 +48,7 @@
         android:id="@+id/CheckBox14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="350dp"
+        android:layout_marginLeft="315dp"
         android:layout_marginTop="505dp">
 
     </CheckBox>
@@ -56,7 +56,7 @@
         android:id="@+id/CheckBox15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="350dp"
+        android:layout_marginLeft="315dp"
         android:layout_marginTop="580dp">
 
     </CheckBox>
@@ -71,7 +71,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="Add Task"
+            android:text="Task Progress"
             android:textStyle="bold"
             android:textSize="45sp"
             android:fontFamily="monospace"
@@ -93,14 +93,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColorHint="@color/visiniuDeschis"
-            app:errorEnabled="true">
+            app:errorEnabled="true"
+            android:clickable="true">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/crem"
                 android:hint="Task Name"
-                android:inputType="text" />
+                android:inputType="text"
+                android:textColor="@color/visiniuInchis"
+                android:clickable="true"
+                android:focusable="false"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -112,11 +116,14 @@
             app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="330dp"
+                android:id="@+id/t1"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:background="@color/crem"
                 android:hint="Subtask1"
-                android:inputType="text" />
+                android:inputType="text"
+                android:textColor="@color/visiniuInchis"/>
+
 
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -130,11 +137,14 @@
             app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="330dp"
+                android:id="@+id/t2"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:background="@color/crem"
                 android:hint="Subtask2"
-                android:inputType="text" />
+                android:inputType="text"
+                android:textColor="@color/visiniuInchis"/>
+
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -146,15 +156,19 @@
             app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="330dp"
+                android:id="@+id/t3"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:background="@color/crem"
                 android:hint="Subtask3"
-                android:inputType="text" />
+                android:inputType="text"
+                android:textColor="@color/visiniuInchis"/>
+
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+
             android:id="@+id/Task4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -162,11 +176,14 @@
             app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="330dp"
+                android:id="@+id/t4"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:background="@color/crem"
                 android:hint="Subtask4"
-                android:inputType="text" />
+                android:inputType="text"
+                android:textColor="@color/visiniuInchis"/>
+
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -178,11 +195,14 @@
             app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="330dp"
+                android:id="@+id/t5"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:background="@color/crem"
                 android:hint="Subtask5"
-                android:inputType="text" />
+                android:inputType="text"
+                android:textColor="@color/visiniuInchis"/>
+
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -195,13 +215,13 @@
             android:weightSum="2.0">
 
             <Button
-                android:id="@+id/SaveTask1"
+                android:id="@+id/SaveTask"
                 style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:backgroundTint="@color/roz"
-                android:text="Save Task"
+                android:text="Save Progress"
                 android:textColor="@color/crem"
 
                 />

@@ -37,6 +37,7 @@
         android:layout_height="700dp">
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="40dp"
@@ -49,13 +50,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="TASK ADDED HERE"
-                android:textSize="20sp"
-                android:textColor="@color/visiniuDeschis">
+                android:text="Vizioneaza laborator"
+                android:textColor="@color/visiniuDeschis"
+                android:textSize="20sp">
 
             </TextView>
         </androidx.cardview.widget.CardView>
+
         <androidx.cardview.widget.CardView
+            android:id="@+id/cardView2"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="100dp"
@@ -67,13 +70,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="TASK ADDED HERE"
-                android:textSize="20sp"
-                android:textColor="@color/visiniuDeschis">
+                android:text="Viziteaza"
+                android:textColor="@color/visiniuDeschis"
+                android:textSize="20sp">
 
             </TextView>
         </androidx.cardview.widget.CardView>
+
         <androidx.cardview.widget.CardView
+            android:id="@+id/cardView3"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="160dp"
@@ -85,13 +90,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="TASK ADDED HERE"
-                android:textSize="20sp"
-                android:textColor="@color/visiniuDeschis">
+                android:text="Nu uita sa cureti:"
+                android:textColor="@color/visiniuDeschis"
+                android:textSize="20sp">
 
             </TextView>
         </androidx.cardview.widget.CardView>
+
         <androidx.cardview.widget.CardView
+            android:id="@+id/cardView4"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="220dp"
@@ -103,13 +110,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="TASK ADDED HERE"
-                android:textSize="20sp"
-                android:textColor="@color/visiniuDeschis">
+                android:text="Vizioneaza cursuri:"
+                android:textColor="@color/visiniuDeschis"
+                android:textSize="20sp">
 
             </TextView>
         </androidx.cardview.widget.CardView>
+
         <androidx.cardview.widget.CardView
+            android:id="@+id/cardView5"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="280dp"
@@ -121,9 +130,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="@string/task_added_here1"
-                android:textSize="20sp"
-                android:textColor="@color/visiniuDeschis">
+                android:text="Cumpara de la magazin:"
+                android:textColor="@color/visiniuDeschis"
+                android:textSize="20sp">
 
             </TextView>
         </androidx.cardview.widget.CardView>

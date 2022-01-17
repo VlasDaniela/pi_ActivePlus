@@ -2,12 +2,11 @@ package com.example.ActivePlus.FragmentsForMainAplicationPage;
 
 import android.graphics.Color;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.fragment.app.Fragment;
 
 import com.example.ActivePlus.R;
 import com.github.mikephil.charting.charts.BarChart;
@@ -26,12 +25,12 @@ import java.util.ArrayList;
 public class Progress extends Fragment {
     public  void Data(BarChart tabel){
         ArrayList<BarEntry>  progress=new ArrayList<>();
-        progress.add(new BarEntry(2014,200));
-        progress.add(new BarEntry(2015,400));
-        progress.add(new BarEntry(2016,600));
-        progress.add(new BarEntry(2017,700));
-        progress.add(new BarEntry(2018,800));
-        progress.add(new BarEntry(2019,900));
+        progress.add(new BarEntry(2014,100));
+        progress.add(new BarEntry(2015,150));
+        progress.add(new BarEntry(2016,200));
+        progress.add(new BarEntry(2017,250));
+//        progress.add(new BarEntry(2018,800));
+//        progress.add(new BarEntry(2019,900));
 
         BarDataSet bardatSet= new BarDataSet(progress,"progress");
         bardatSet.setColors(ColorTemplate.MATERIAL_COLORS);

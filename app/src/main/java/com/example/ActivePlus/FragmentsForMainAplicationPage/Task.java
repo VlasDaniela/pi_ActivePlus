@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -16,6 +17,7 @@ import androidx.fragment.app.Fragment;
 
 import com.example.ActivePlus.R;
 import com.example.ActivePlus.RetrofitInterface;
+import com.google.android.material.progressindicator.LinearProgressIndicator;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.HashMap;
@@ -34,6 +36,12 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class Task extends Fragment {
 
     final int x[]= {0};
+    String[] v1=new String[5];
+    String[] v2=new String[5];
+    String[] v3=new String[5];
+    String[] v4=new String[5];
+    String[] v5=new String[5];
+    int operator=0;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -90,6 +98,51 @@ public class Task extends Fragment {
             public void onClick(View v) {
                 handleCreateTaskDialog();
             }
+        });
+        CardView cardView = fragmentview.findViewById(R.id.cardView);
+        CardView cardView2 = fragmentview.findViewById(R.id.cardView2);
+        CardView cardView3 = fragmentview.findViewById(R.id.cardView3);
+        CardView cardView4 = fragmentview.findViewById(R.id.cardView4);
+        CardView cardView5 = fragmentview.findViewById(R.id.cardView5);
+
+        cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                progress(v1);
+            }
+
+        });
+
+        cardView2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                progress(v2);
+            }
+
+        });
+
+        cardView3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                progress(v3);
+            }
+
+        });
+
+        cardView4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                progress(v4);
+            }
+
+        });
+
+        cardView5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                progress(v5);
+            }
+
         });
 
         return  fragmentview;
@@ -178,6 +231,160 @@ public class Task extends Fragment {
                 });
             }
         });
+    }
+    public  void progress(String vector[]){
+        View vi = getLayoutInflater().inflate(R.layout.activity_task1, null);
+        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+
+        builder.setView(vi).show();
+
+        Button save = vi.findViewById(R.id.SaveTask);
+
+        CheckBox c1 = vi.findViewById(R.id.CheckBox11);
+        CheckBox c2 = vi.findViewById(R.id.CheckBox12);
+        CheckBox c3 = vi.findViewById(R.id.CheckBox13);
+        CheckBox c4 = vi.findViewById(R.id.CheckBox14);
+        CheckBox c5 = vi.findViewById(R.id.CheckBox15);
+
+        LinearProgressIndicator bar=vi.findViewById(R.id.ProgressIdicator);
+        TextInputEditText t1=vi.findViewById(R.id.t1);
+        TextInputEditText t2=vi.findViewById(R.id.t2);
+        TextInputEditText t3=vi.findViewById(R.id.t3);
+        TextInputEditText t4=vi.findViewById(R.id.t4);
+        TextInputEditText t5=vi.findViewById(R.id.t5);
+        int i=-1;
+        if(t1.getText()!=null){
+            i++;
+            vector[i]=t1.getEditableText().toString();
+        }
+        if(t2.getText()!=null){
+            i++;
+            vector[i]=t2.getEditableText().toString();
+        }
+        if(t3.getText()!=null){
+            i++;
+            vector[i]=t3.getEditableText().toString();
+        }
+        if(t4.getText()!=null){
+            i++;
+            vector[i]=t4.getEditableText().toString();
+        }
+        if(t5.getText()!=null){
+            i++;
+            vector[i]=t5.getEditableText().toString();
+        }
+
+        save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(bar.getProgress()==100){
+                    Toast.makeText(getActivity() , "Ai terminat!", Toast.LENGTH_SHORT).show();
+                } else {
+                    if(bar.getProgress()==20){
+                        Toast.makeText(getActivity(), "Ai completat 20%", Toast.LENGTH_SHORT).show();
+                    }else{
+                        if(bar.getProgress()==40){
+                            Toast.makeText(getActivity(), "Ai completat 40%", Toast.LENGTH_SHORT).show();
+                        }else{
+                            if(bar.getProgress()==60){
+                                Toast.makeText(getActivity(), "Ai completat 60%", Toast.LENGTH_SHORT).show();
+                            }else {
+                                if(bar.getProgress()==80){
+                                    Toast.makeText(getActivity(), "Ai ccompletat 80%", Toast.LENGTH_SHORT).show();
+                                }else{
+                                    Toast.makeText(getActivity(), "Nu ai inceput task-ul", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+
+
+        c1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(c1.isChecked()){
+                    bar.setProgress(bar.getProgress()+20);
+
+                }
+                else {
+                    bar.setProgress(bar.getProgress()-20);
+                }
+            }
+        });
+
+        c2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(c2.isChecked()){
+                    bar.setProgress(bar.getProgress()+20);
+
+                }
+                else {
+                    bar.setProgress(bar.getProgress()-20);
+                }
+            }
+        });
+
+        c3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(c3.isChecked()){
+                    bar.setProgress(bar.getProgress()+20);
+
+                }
+                else {
+                    bar.setProgress(bar.getProgress()-20);
+                }
+            }
+        });
+
+        c4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(c4.isChecked()){
+                    bar.setProgress(bar.getProgress()+20);
+
+                }
+                else {
+                    bar.setProgress(bar.getProgress()-20);
+                }
+            }
+        });
+
+        c5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(c5.isChecked()){
+                    bar.setProgress(bar.getProgress()+20);
+
+                }
+                else {
+                    bar.setProgress(bar.getProgress()-20);
+                }
+            }
+        });
+    }
+    public void insertData(String vector[]){
+        View vi = getLayoutInflater().inflate(R.layout.activity_task1, null);
+        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+        builder.setView(vi).show();
+
+        TextInputEditText t1=vi.findViewById(R.id.t1);
+        TextInputEditText t2=vi.findViewById(R.id.t2);
+        TextInputEditText t3=vi.findViewById(R.id.t3);
+        TextInputEditText t4=vi.findViewById(R.id.t4);
+        TextInputEditText t5=vi.findViewById(R.id.t5);
+
+        t1.setText(vector[0]);
+        t2.setText(vector[1]);
+        t3.setText(vector[2]);
+        t4.setText(vector[3]);
+        t5.setText(vector[4]);
+
     }
 }
 
