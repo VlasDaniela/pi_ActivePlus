@@ -27,7 +27,7 @@
         android:layout_marginStart="50dp"
         android:layout_marginBottom="40dp"
         android:backgroundTint="@color/roz"
-        android:text="@string/sing_up"
+        android:text="@string/sign_up"
         android:textColor="@color/white"
         android:textStyle="italic" />
     <Button
@@ -40,7 +40,7 @@
         android:layout_marginStart="259dp"
         android:backgroundTint="@color/roz"
         android:textColor="@color/white"
-        android:text="@string/sing_in"
+        android:text="@string/sign_in"
         android:textStyle="italic"/>
 
     <TextView

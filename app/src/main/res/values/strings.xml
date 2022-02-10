@@ -43,4 +43,6 @@
     <string name="task_added_here3">TASK ADDED HERE</string>
     <string name="task_added_here4">TASK ADDED HERE</string>
     <string name="task_added_here5">TASK ADDED HERE</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up">Sign Up</string>
 </resources>
