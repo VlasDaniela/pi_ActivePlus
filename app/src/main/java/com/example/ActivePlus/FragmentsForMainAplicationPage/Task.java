@@ -300,23 +300,79 @@ public class Task extends Fragment {
                 }
             }
         });
-
-
+        c2.setClickable(false);
+        c3.setClickable(false);
+        c4.setClickable(false);
+        c5.setClickable(false);
 
         c1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(c1.isChecked()){
                     bar.setProgress(bar.getProgress()+20);
+                    c2.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            if(c2.isChecked()){
+                                bar.setProgress(bar.getProgress()+20);
+                                c3.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        if(c3.isChecked()){
+                                            bar.setProgress(bar.getProgress()+20);
+                                            c4.setOnClickListener(new View.OnClickListener() {
+                                                @Override
+                                                public void onClick(View v) {
+                                                    if(c4.isChecked()){
+                                                        bar.setProgress(bar.getProgress()+20);
+                                                        c5.setOnClickListener(new View.OnClickListener() {
+                                                            @Override
+                                                            public void onClick(View v) {
+                                                                if(c5.isChecked()){
+                                                                    bar.setProgress(bar.getProgress()+20);
 
+                                                                }
+                                                                else {
+                                                                    bar.setProgress(bar.getProgress()-20);
+                                                                }
+                                                            }
+                                                        });
+                                                    }
+                                                    else {
+                                                        bar.setProgress(bar.getProgress()-20);
+                                                        c5.setClickable(false);
+                                                    }
+                                                }
+                                            });
+                                        }
+                                        else {
+                                            bar.setProgress(bar.getProgress()-20);
+                                            c4.setClickable(false);
+                                            c5.setClickable(false);
+                                        }
+                                    }
+                                });
+                            }
+                            else {
+                                bar.setProgress(bar.getProgress()-20);
+                                c3.setClickable(false);
+                                c4.setClickable(false);
+                                c5.setClickable(false);
+                            }
+                        }
+                    });
                 }
                 else {
                     bar.setProgress(bar.getProgress()-20);
+                    c2.setClickable(false);
+                    c3.setClickable(false);
+                    c4.setClickable(false);
+                    c5.setClickable(false);
                 }
             }
         });
 
-        c2.setOnClickListener(new View.OnClickListener() {
+       /* c2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(c2.isChecked()){
@@ -366,7 +422,7 @@ public class Task extends Fragment {
                     bar.setProgress(bar.getProgress()-20);
                 }
             }
-        });
+        });*/
     }
     public void insertData(String vector[]){
         View vi = getLayoutInflater().inflate(R.layout.activity_task1, null);
